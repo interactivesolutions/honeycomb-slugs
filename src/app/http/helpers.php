@@ -17,6 +17,9 @@ if (!function_exists('generateHCSlug')) {
 
         //TODO check if $path has '/' on both sides
 
+        if(substr($path, -1) != '/')
+            $path .= '/';
+
         $record = HCSlugs::where('path', $path)->where('slug', $slug)->first();
 
         if (!$record) {
