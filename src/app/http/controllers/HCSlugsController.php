@@ -1,8 +1,8 @@
 <?php namespace interactivesolutions\honeycombslugs\http\controllers;
 
+use Illuminate\Database\Eloquent\Builder;
 use interactivesolutions\honeycombcore\http\controllers\HCBaseController;
 use interactivesolutions\honeycombslugs\models\HCSlugs;
-use interactivesolutions\honeycombslugs\validators\HCSlugsValidator;
 
 class HCSlugsController extends HCBaseController
 {
@@ -83,7 +83,7 @@ class HCSlugsController extends HCBaseController
      * @param $list
      * @return mixed
      */
-    protected function listSearch($list)
+    protected function listSearch(Builder $list)
     {
         if (request()->has('q')) {
             $parameter = request()->input('q');

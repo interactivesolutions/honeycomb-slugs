@@ -11,7 +11,7 @@ if (!function_exists('generateHCSlug')) {
      * @param string $separator
      * @return string
      */
-    function generateHCSlug($path, $string, $separator = '-')
+    function generateHCSlug(string $path, string $string, string $separator = '-')
     {
         $slug = str_slug($string, $separator);
 

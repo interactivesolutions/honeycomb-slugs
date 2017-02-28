@@ -53,7 +53,7 @@ class HCSlugsServiceProvider extends ServiceProvider
     /**
      *  Registering all vendor items which needs to be published
      */
-    private function registerPublishElements ()
+    private function registerPublishElements()
     {
         // Publish your migrations
         $this->publishes([
