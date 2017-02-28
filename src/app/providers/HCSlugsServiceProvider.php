@@ -1,6 +1,6 @@
 <?php
 
-namespace interactivesolutions\honeycombslugs\providers;
+namespace interactivesolutions\honeycombslugs\app\providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class HCSlugsServiceProvider extends ServiceProvider
      */
     protected $commands = [];
 
-    protected $namespace = 'interactivesolutions\honeycombslugs\http\controllers';
+    protected $namespace = 'interactivesolutions\honeycombslugs\app\http\controllers';
 
     /**
      * Bootstrap the application services.
