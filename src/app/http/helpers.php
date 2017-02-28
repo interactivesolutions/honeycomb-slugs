@@ -1,6 +1,6 @@
 <?php
 
-use interactivesolutions\honeycombslugs\models\HCSlugs;
+use interactivesolutions\honeycombslugs\app\models\HCSlugs;
 
 if (!function_exists('generateHCSlug')) {
     /**
