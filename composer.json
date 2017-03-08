@@ -2,7 +2,7 @@
     "name": "interactivesolutions/honeycomb-slugs",
     "description": "HoneyComb CMS package checks if URLs is not repeating and if so creates a slug",
     "keywords": ["honeycomb", "honey", "laravel", "slugs", "url", "url-validate", "validate"],
-    "licence": "MIT",
+    "license": "MIT",
     "authors": [
         {
             "name": "Mantas Gelčius",
