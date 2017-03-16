@@ -46,7 +46,7 @@ class HCSlugsServiceProvider extends ServiceProvider
     {
         $filePath = __DIR__ . '/../Http/helpers.php';
 
-        if (\File::isFile($filePath))
+        if (file_exists($filePath))
             require_once $filePath;
     }
 
@@ -55,15 +55,21 @@ class HCSlugsServiceProvider extends ServiceProvider
      */
     private function registerPublishElements()
     {
+        $directory = __DIR__ . '/../../database/migrations/';
+
         // Publish your migrations
-        $this->publishes([
-            __DIR__ . '/../../database/migrations/' => database_path('/migrations'),
-        ], 'migrations');
+        if (file_exists ($directory))
+            $this->publishes ([
+                __DIR__ . '/../../database/migrations/' => database_path ('/migrations'),
+            ], 'migrations');
+
+        $directory = __DIR__ . '/../public';
 
         // Publishing assets
-        $this->publishes([
-            __DIR__ . '/../public' => public_path('honeycomb'),
-        ], 'public');
+        if (file_exists ($directory))
+            $this->publishes ([
+                __DIR__ . '/../public' => public_path ('honeycomb'),
+            ], 'public');
     }
 
     /**
@@ -71,9 +77,12 @@ class HCSlugsServiceProvider extends ServiceProvider
      */
     private function registerRoutes()
     {
-        \Route::group(['namespace' => $this->namespace], function ($router) {
-            require __DIR__ . '/../../app/honeycomb/routes.php';
-        });
+        $filePath = __DIR__ . '/../../app/honeycomb/routes.php';
+
+        if (file_exists($filePath))
+            \Route::group (['namespace' => $this->namespace], function ($router) use ($filePath) {
+                require $filePath;
+            });
     }
 }
 
