@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth']], function () {
+Route::group(['prefix' => env('HC_ADMIN_URL'), 'middleware' => ['web', 'auth']], function () {
     Route::get('slugs', ['as' => 'admin.slugs', 'middleware' => ['acl:interactivesolutions_honeycomb_slugs_slugs_list'], 'uses' => 'HCSlugsController@adminView']);
 
     Route::group(['prefix' => 'api/slugs'], function () {
