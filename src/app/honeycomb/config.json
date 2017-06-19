@@ -6,6 +6,8 @@
   "adminMenu": [
     {
       "path": "admin\/slugs",
+      "route": "admin.slugs.index",
+      "parent": "admin/hc",
       "translation": "HCSlugs::slugs.page_title",
       "icon": "",
       "aclPermission": "interactivesolutions_honeycomb_slugs_slugs_list"
