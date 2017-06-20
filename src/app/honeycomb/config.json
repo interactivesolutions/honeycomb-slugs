@@ -5,9 +5,8 @@
   "formData": {},
   "adminMenu": [
     {
-      "path": "admin\/slugs",
       "route": "admin.slugs.index",
-      "parent": "admin/hc",
+      "parent": "admin.index",
       "translation": "HCSlugs::slugs.page_title",
       "icon": "",
       "aclPermission": "interactivesolutions_honeycomb_slugs_slugs_list"
