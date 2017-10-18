@@ -1,7 +1,7 @@
 <?php namespace interactivesolutions\honeycombslugs\app\http\controllers;
 
 use Illuminate\Database\Eloquent\Builder;
-use interactivesolutions\honeycombcore\http\controllers\HCBaseController;
+use InteractiveSolutions\HoneycombCore\Http\Controllers\HCBaseController;
 use interactivesolutions\honeycombslugs\app\models\HCSlugs;
 
 class HCSlugsController extends HCBaseController

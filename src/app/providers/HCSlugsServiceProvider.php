@@ -2,7 +2,8 @@
 
 namespace interactivesolutions\honeycombslugs\app\providers;
 
-use interactivesolutions\honeycombcore\providers\HCBaseServiceProvider;
+
+use InteractiveSolutions\HoneycombCore\Providers\HCBaseServiceProvider;
 
 class HCSlugsServiceProvider extends HCBaseServiceProvider
 {

@@ -2,7 +2,8 @@
 
 namespace interactivesolutions\honeycombslugs\app\models;
 
-use interactivesolutions\honeycombcore\models\HCUuidModel;
+
+use InteractiveSolutions\HoneycombCore\Models\HCUuidModel;
 
 class HCSlugs extends HCUuidModel
 {
