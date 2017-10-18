@@ -17,16 +17,17 @@ if (!function_exists('generateHCSlug')) {
 
         //TODO check if $path has '/' on both sides
 
-        if(substr($path, -1) != '/')
+        if (substr($path, -1) != '/') {
             $path .= '/';
+        }
 
         $record = HCSlugs::where('path', $path)->where('slug', $slug)->first();
 
         if (!$record) {
             HCSlugs::create([
-                "path"       => $path,
-                "slug"       => $slug,
-                'slug_count' => 1
+                "path" => $path,
+                "slug" => $slug,
+                'slug_count' => 1,
             ]);
 
             return $slug;

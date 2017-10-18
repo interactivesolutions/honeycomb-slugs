@@ -15,12 +15,12 @@ class HCSlugsController extends HCBaseController
     public function adminIndex()
     {
         $config = [
-            'title'       => trans('HCSlugs::slugs.page_title'),
-            'listURL'     => route('admin.api.slugs'),
-            'newFormUrl'  => route('admin.api.form-manager', ['slugs-new']),
+            'title' => trans('HCSlugs::slugs.page_title'),
+            'listURL' => route('admin.api.slugs'),
+            'newFormUrl' => route('admin.api.form-manager', ['slugs-new']),
             'editFormUrl' => route('admin.api.form-manager', ['slugs-edit']),
             //    'imagesUrl'   => route('resource.get', ['/']),
-            'headers'     => $this->getAdminListHeader(),
+            'headers' => $this->getAdminListHeader(),
         ];
 
         $config['actions'][] = 'search';
@@ -36,16 +36,16 @@ class HCSlugsController extends HCBaseController
     public function getAdminListHeader()
     {
         return [
-            'path'       => [
-                "type"  => "text",
+            'path' => [
+                "type" => "text",
                 "label" => trans('HCSlugs::slugs.path'),
             ],
-            'slug'       => [
-                "type"  => "text",
+            'slug' => [
+                "type" => "text",
                 "label" => trans('HCSlugs::slugs.slug'),
             ],
             'slug_count' => [
-                "type"  => "text",
+                "type" => "text",
                 "label" => trans('HCSlugs::slugs.slug_count'),
             ],
 
@@ -62,12 +62,13 @@ class HCSlugsController extends HCBaseController
     {
         $with = [];
 
-        if ($select == null)
+        if ($select == null) {
             $select = HCSlugs::getFillableFields();
+        }
 
         $list = HCSlugs::with($with)->select($select)
             // add filters
-            ->where(function ($query) use ($select) {
+            ->where(function($query) use ($select) {
                 $query = $this->getRequestParameters($query, $select);
             });
 
@@ -91,10 +92,10 @@ class HCSlugsController extends HCBaseController
      */
     protected function searchQuery(Builder $query, string $phrase)
     {
-        return $query->where (function (Builder $query) use ($phrase) {
+        return $query->where(function(Builder $query) use ($phrase) {
             $query->where('path', 'LIKE', '%' . $phrase . '%')
-                    ->orWhere('slug', 'LIKE', '%' . $phrase . '%')
-                    ->orWhere('slug_count', 'LIKE', '%' . $phrase . '%');
-            });
+                ->orWhere('slug', 'LIKE', '%' . $phrase . '%')
+                ->orWhere('slug_count', 'LIKE', '%' . $phrase . '%');
+        });
     }
 }
